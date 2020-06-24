@@ -1,0 +1,176 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #cfd0cf;
+    font-family: Arial, sans-serif;
+    color: #434344;
+    overflow: hidden;
+}
+
+.head {
+    text-align: center;
+    line-height: 47px;
+    font-size: 42px;
+    padding: 40px 0;
+}
+
+.scene {
+    width: 600px;
+    height: 450px;
+    perspective: 600px;
+    margin: 0 auto;
+}
+
+.card {
+    width: 130px;
+    height: 130px;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    display: inline-block;
+    margin:0 25px 25px -2px;
+    cursor: pointer;
+}
+
+.card:nth-child(4n) {
+    margin-right: 0;
+}
+
+.front, .back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    border: 5px solid white;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 9px;
+}
+
+.front {
+    background: linear-gradient(to right top, #22ab93, #19668d);
+}
+
+.back {
+    background: white;
+    transform: rotateY( 180deg );
+    font-size: 75px;
+    line-height: 130px;
+    text-align: center;
+}
+
+#timer {
+    line-height: 36px;
+    font-size: 32px;
+    margin: 30px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.flipped {
+    transform: rotateY(180deg);
+}
+
+.right {
+    background: #5ad66f;
+    border-color: #5ad66f;
+}
+
+.wrong {
+    background: #f44336;
+    border-color: #f44336;
+}
+
+span {
+    display: none;
+}
+
+#popup {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+.hidden {
+    display: none;
+}
+
+#popup_window {
+    min-width: 350px;
+    background: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#head {
+    font-size: 60px;
+    margin: 30px;
+    text-align: center;
+}
+
+.animation {
+    position: relative;
+    text-decoration: none;
+    animation: bouncing 1s ease infinite alternate;
+}
+
+.delay_0 {
+    animation-delay: 0s;
+}
+
+.delay_1 {
+    animation-delay: 0.25s;
+}
+
+.delay_2 {
+    animation-delay: 0.50s;
+}
+
+.delay_3 {
+    animation-delay: 0.75s;
+}
+
+
+@keyframes bouncing {
+    from {
+        font-size: 60px;
+        top: -20px;
+    }
+    to {
+        font-size: 30px;
+        top: 0;
+    }
+}
+
+
+
+
+
+
+#play {
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px 30px;
+    color: white;
+    background: linear-gradient(to right, #19698e, #22a893);
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    left: 28%;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+
+#play:focus {
+    outline: none;
+    box-shadow: inset 2px 1px 8px rgba(0,0,0,0.5);
+}
